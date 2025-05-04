@@ -12,8 +12,7 @@ fun AppNavGraph(navController: NavHostController){
     NavHost(navController = navController, startDestination = NavRoutes.SignIn.route){
        composable(NavRoutes.SignIn.route) {
            SignInScreen(
-               navController,
-               viewModel = TODO()
+               navController
            )
        }
         composable(NavRoutes.Home.route) {

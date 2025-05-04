@@ -1,4 +1,4 @@
-package com.example.mangafaceapp.data
+package com.example.mangafaceapp.data.model
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

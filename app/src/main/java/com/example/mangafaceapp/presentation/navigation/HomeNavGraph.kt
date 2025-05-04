@@ -8,6 +8,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.mangafaceapp.presentation.ui.FaceRecognitionScreen
+import com.example.mangafaceapp.presentation.ui.MangaDetailScreen
 import com.example.mangafaceapp.presentation.ui.MangaScreen
 
 @Composable
@@ -18,6 +19,12 @@ fun HomeNavGraph(navController: NavHostController, modifier: Modifier = Modifier
         }
         composable(BottomNavItem.Face.route) {
             FaceRecognitionScreen(navController)
+        }
+
+        // Adding this block to handle the Manga Detail screen
+        composable("mangaDetail/{mangaId}") { backStackEntry ->
+            val mangaId = backStackEntry.arguments?.getString("mangaId") ?: ""
+            MangaDetailScreen(mangaId = mangaId, navController = navController)
         }
     }
 }
