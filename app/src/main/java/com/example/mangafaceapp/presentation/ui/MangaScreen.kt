@@ -1,9 +1,17 @@
 package com.example.mangafaceapp.presentation.ui
 
+import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.foundation.lazy.grid.itemsIndexed
+import androidx.compose.foundation.lazy.grid.rememberLazyGridState
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material3.CircularProgressIndicator
@@ -17,25 +25,33 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 
+@OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun MangaScreen(navController: NavController, viewModel: MangaViewModel = hiltViewModel()){
     val mangas = viewModel.mangaList
-    val listState = rememberLazyListState()
+    val gridState = rememberLazyGridState()
 
     // Call this once when the screen appears
     LaunchedEffect(Unit) {
         viewModel.loadMore()
     }
 
-    LaunchedEffect(listState) {
-        snapshotFlow { listState.layoutInfo.visibleItemsInfo.lastOrNull()?.index }
+    LaunchedEffect(gridState) {
+        snapshotFlow { gridState.layoutInfo.visibleItemsInfo.lastOrNull()?.index }
             .collect { index ->
-                if(index == mangas.lastIndex) viewModel.loadMore()
+                if(index != null && index == mangas.lastIndex) viewModel.loadMore()
             }
     }
 
-    LazyColumn ( state = listState ) {
-        itemsIndexed(mangas) { index, manga ->
+    LazyVerticalGrid (
+        columns = GridCells.Fixed(3),
+        state = gridState,
+        contentPadding = PaddingValues(4.dp),
+        horizontalArrangement = Arrangement.spacedBy(4.dp),
+        verticalArrangement = Arrangement.spacedBy(4.dp),
+        modifier = Modifier.fillMaxSize()
+    ) {
+        itemsIndexed(mangas) { _, manga ->
             MangaItem(manga = manga, onClick = {
                 navController.navigate("mangaDetail/${manga.id}")
             })

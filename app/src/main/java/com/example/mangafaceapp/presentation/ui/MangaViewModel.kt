@@ -1,5 +1,7 @@
 package com.example.mangafaceapp.presentation.ui
 
+import android.util.Log
+import androidx.compose.runtime.State
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
@@ -22,43 +24,39 @@ class MangaViewModel @Inject constructor(
     var isLoading by mutableStateOf(false)
     var endReached by mutableStateOf(false)
 
-//    fun loadMore() {
-//        if(isLoading || endReached) return
-//
-//        viewModelScope.launch {
-//            isLoading = true
-//            val newData = repository.fetchManga(currentPage)
-//            if(newData.isNotEmpty()){
-//                mangaList.addAll(newData)
-//                currentPage++
-//            } else {
-//                endReached = true
-//            }
-//            isLoading = false
-//        }
-//    }
+    private val _selectedManga = mutableStateOf<Manga?>(null)
+    val selectedManga: State<Manga?> = _selectedManga
 
     fun loadMore() {
-        mangaList.clear()
-        mangaList.addAll(
-            listOf(
-                Manga(
-                    id = "1",
-                    title = "Test Manga",
-                    subTitle = "ok",
-                    status = "ongoing",
-                    thumb = "",
-                    summary = "This is a test.",
-                    authors = listOf("Author A"),
-                    genres = listOf("Action", "Adventure"),
-                    nsfw = false,
-                    type = "korea",
-                    totalChapter = 10,
-                    createdAt = System.currentTimeMillis(),
-                    updatedAt = System.currentTimeMillis(),
-                )
-            )
-        )
+        if (isLoading || endReached) return
+
+        viewModelScope.launch {
+            isLoading = true
+
+            // Fetch new data from repository
+            val newData = repository.fetchManga(currentPage)
+
+            // Log to check what data is fetched
+            Log.d("MangaViewModel", "Fetched new data: $newData")
+
+            // Check if new data is not empty
+            if (newData.isNotEmpty()) {
+                Log.d("MangaViewModel", "New data added: ${newData.size} items")
+                mangaList.addAll(newData)
+                currentPage++
+            } else {
+                Log.d("MangaViewModel", "No more data found, end reached.")
+                endReached = true
+            }
+
+            isLoading = false
+        }
+    }
+
+    fun loadMangaById(mangaId: String) {
+        viewModelScope.launch {
+            _selectedManga.value = repository.getMangaById(mangaId)
+        }
     }
 
 

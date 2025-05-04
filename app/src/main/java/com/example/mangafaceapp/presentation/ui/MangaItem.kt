@@ -22,32 +22,16 @@ import com.example.mangafaceapp.data.model.Manga
 
 @Composable
 fun MangaItem(manga: Manga, onClick: () -> Unit) {
-    Card(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(8.dp)
-            .clickable { onClick() },
-        elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
-    ) {
-        Row(modifier = Modifier
+
+        Column(modifier = Modifier
             .fillMaxWidth()
             .clickable { onClick() }
-            .padding(16.dp)) {
+            .padding(4.dp)) {
             AsyncImage(
-                model = manga.thumb,
+                model = manga.thumb?: "https://via.placeholder.com/150",
                 contentDescription = manga.title,
-                modifier = Modifier.size(80.dp)
+                modifier = Modifier.size(150.dp)
             )
-            Spacer(modifier = Modifier.width(16.dp))
-            Column(modifier = Modifier.fillMaxWidth()) {
-                Text(
-                    text = manga.title,
-                    style = MaterialTheme.typography.bodyLarge,
-                    maxLines = 1,
-                    overflow = TextOverflow.Ellipsis
-                )
-                // Add more details if necessary, for example, description
-            }
         }
-    }
+
 }
