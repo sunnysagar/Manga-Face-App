@@ -60,6 +60,9 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
 
+    implementation ("androidx.navigation:navigation-compose:2.8.9")
+    implementation ("androidx.hilt:hilt-navigation-compose:1.2.0")
+
     // Retrofit for API calls
     implementation(libs.retrofit)
     implementation(libs.retrofit.gson)
