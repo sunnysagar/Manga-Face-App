@@ -24,7 +24,6 @@ object AppModule {
         return Room.databaseBuilder(
             context,
             AppDatabase::class.java,
-            "manga_face_app_db"
         ).build()
     }
 
