@@ -9,12 +9,17 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.compose.rememberNavController
 import com.example.mangafaceapp.presentation.navigation.AppNavGraph
+import com.example.mangafaceapp.presentation.ui.SignInViewModel
 import com.example.mangafaceapp.ui.theme.MangaFaceAppTheme
 import dagger.hilt.android.AndroidEntryPoint
+import androidx.compose.runtime.getValue
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -23,7 +28,22 @@ class MainActivity : ComponentActivity() {
 //        enableEdgeToEdge()
         setContent {
             MangaFaceAppTheme {
-               val navController = rememberNavController()
+                val navController = rememberNavController()
+                val viewModel: SignInViewModel = hiltViewModel()
+
+                val isLoggedIn by viewModel.isLoggedIn.collectAsState(initial = false)
+
+                LaunchedEffect(isLoggedIn) {
+                    if (isLoggedIn) {
+                        navController.navigate("home") {
+                            popUpTo("splash") { inclusive = true }
+                        }
+                    } else {
+                        navController.navigate("sign-in") {
+                            popUpTo("splash") { inclusive = true }
+                        }
+                    }
+                }
                 AppNavGraph(navController = navController)
                 }
             }
