@@ -1,10 +1,9 @@
-package com.example.mangafaceapp.presentation.usecase
+package com.example.mangafaceapp.utils
 
 import android.content.Context
 import android.graphics.Bitmap
 import com.google.mediapipe.framework.image.BitmapImageBuilder
 import com.google.mediapipe.tasks.core.BaseOptions
-import com.google.mediapipe.tasks.vision.core.ImageProcessingOptions
 import com.google.mediapipe.tasks.vision.facedetector.FaceDetector
 
 class FaceDetectionHelper(context: Context) {

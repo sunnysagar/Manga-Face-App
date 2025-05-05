@@ -4,8 +4,8 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.example.mangafaceapp.presentation.ui.HomeScreen
-import com.example.mangafaceapp.presentation.ui.SignInScreen
+import com.example.mangafaceapp.presentation.mainUi.HomeScreen
+import com.example.mangafaceapp.presentation.signin.SignInScreen
 
 @Composable
 fun AppNavGraph(navController: NavHostController){

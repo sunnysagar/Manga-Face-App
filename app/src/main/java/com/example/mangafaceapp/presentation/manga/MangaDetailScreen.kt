@@ -1,5 +1,6 @@
-package com.example.mangafaceapp.presentation.ui
+package com.example.mangafaceapp.presentation.manga
 
+import android.util.Log
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -18,6 +19,7 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import coil.compose.AsyncImage
+import com.example.mangafaceapp.domain.MangaViewModel
 
 @Composable
 fun MangaDetailScreen(
@@ -37,13 +39,17 @@ fun MangaDetailScreen(
                 AsyncImage(
                     model = it.thumb,
                     contentDescription = it.title,
-                    modifier = Modifier.size(150.dp).fillMaxWidth()
+                    modifier = Modifier.size(150.dp)
                 )
                 Spacer(modifier = Modifier.width(6.dp))
-                Column(modifier = Modifier.padding(4.dp)) {
+                Column(modifier = Modifier.padding(4.dp)
+                    .weight(1f)    // This ensures column gets remaining space
+                ) {
                     it.title?.let { it1 -> Text(it1, style = MaterialTheme.typography.titleLarge) }
                     Spacer(modifier = Modifier.height(4.dp))
                     it.subTitle?.let{ it1 -> Text(it1, style = MaterialTheme.typography.titleMedium) }
+                    Log.d("SubtitleCheck", "Subtitle: ${it.subTitle}")
+
                 }
                 }
 

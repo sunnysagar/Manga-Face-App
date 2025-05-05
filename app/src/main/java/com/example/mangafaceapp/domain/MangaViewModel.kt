@@ -1,4 +1,4 @@
-package com.example.mangafaceapp.presentation.ui
+package com.example.mangafaceapp.domain
 
 import android.util.Log
 import androidx.compose.runtime.State
@@ -36,16 +36,13 @@ class MangaViewModel @Inject constructor(
             // Fetch new data from repository
             val newData = repository.fetchManga(currentPage)
 
-            // Log to check what data is fetched
-            Log.d("MangaViewModel", "Fetched new data: $newData")
-
             // Check if new data is not empty
             if (newData.isNotEmpty()) {
-                Log.d("MangaViewModel", "New data added: ${newData.size} items")
+
                 mangaList.addAll(newData)
                 currentPage++
             } else {
-                Log.d("MangaViewModel", "No more data found, end reached.")
+
                 endReached = true
             }
 

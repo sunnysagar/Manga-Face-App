@@ -14,18 +14,16 @@ class MangaRepository @Inject constructor(
 ){
     suspend fun fetchManga(page: Int): List<Manga> {
         return try {
-            Log.d("MangaRepo", "Fetching page: $page")
+
             val response = mangaApiService.fetchMangaData(page=page)
-            Log.d("MangaRepo", "Response code: ${response.code()}, success: ${response.isSuccessful}")
-            Log.d("MangaRepo", "Body: ${response.body()}")
 
             if(response.isSuccessful){
                 val mangasList = response.body()?.data ?: emptyList()
-                Log.d("MangaRepo", "Parsed manga count: ${mangasList.size}")
+
 
                 // Check if any manga has null fields
                 mangasList.forEach { manga ->
-                    Log.d("MangaRepo", "Checking manga data: ${manga.title}, ${manga.thumb}")
+
                     if (manga.title == null || manga.thumb == null) {
                         Log.e("MangaRepo", "Null field detected in manga: $manga")
                     }

@@ -1,9 +1,8 @@
-package com.example.mangafaceapp.presentation.ui
+package com.example.mangafaceapp.domain
 
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.mangafaceapp.data.model.User
 import com.example.mangafaceapp.data.local.UserPreferences
