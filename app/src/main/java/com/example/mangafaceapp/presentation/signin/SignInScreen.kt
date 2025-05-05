@@ -1,4 +1,4 @@
-package com.example.mangafaceapp.presentation.ui
+package com.example.mangafaceapp.presentation.signin
 
 import androidx.compose.foundation.clickable
 import androidx.compose.runtime.getValue
@@ -40,6 +40,7 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import com.example.mangafaceapp.presentation.navigation.NavRoutes
+import com.example.mangafaceapp.domain.SignInViewModel
 
 @Composable
 fun SignInScreen(navController: NavHostController, viewModel: SignInViewModel = hiltViewModel()) {

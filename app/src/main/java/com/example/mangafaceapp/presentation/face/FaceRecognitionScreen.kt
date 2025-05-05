@@ -1,4 +1,4 @@
-package com.example.mangafaceapp.presentation.ui
+package com.example.mangafaceapp.presentation.face
 
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
@@ -15,7 +15,6 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.size
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -27,13 +26,12 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalDensity
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.navigation.NavController
-import com.example.mangafaceapp.presentation.usecase.FaceDetectionHelper
+import com.example.mangafaceapp.utils.FaceDetectionHelper
 import java.io.ByteArrayOutputStream
 
 @Composable

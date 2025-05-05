@@ -2,14 +2,12 @@ package com.example.mangafaceapp.presentation.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.navigation.NavController
-import androidx.navigation.NavHost
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.example.mangafaceapp.presentation.ui.FaceRecognitionScreen
-import com.example.mangafaceapp.presentation.ui.MangaDetailScreen
-import com.example.mangafaceapp.presentation.ui.MangaScreen
+import com.example.mangafaceapp.presentation.face.FaceRecognitionScreen
+import com.example.mangafaceapp.presentation.manga.MangaDetailScreen
+import com.example.mangafaceapp.presentation.manga.MangaScreen
 
 @Composable
 fun HomeNavGraph(navController: NavHostController, modifier: Modifier = Modifier){

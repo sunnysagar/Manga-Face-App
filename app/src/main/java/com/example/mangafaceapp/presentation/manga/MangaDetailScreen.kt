@@ -1,4 +1,4 @@
-package com.example.mangafaceapp.presentation.ui
+package com.example.mangafaceapp.presentation.manga
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -18,6 +18,7 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import coil.compose.AsyncImage
+import com.example.mangafaceapp.domain.MangaViewModel
 
 @Composable
 fun MangaDetailScreen(

@@ -1,4 +1,4 @@
-package com.example.mangafaceapp.presentation.ui
+package com.example.mangafaceapp.domain
 
 import android.util.Log
 import androidx.compose.runtime.State
