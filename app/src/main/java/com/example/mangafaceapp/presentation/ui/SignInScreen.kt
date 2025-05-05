@@ -145,13 +145,13 @@ fun SignInScreen(navController: NavHostController, viewModel: SignInViewModel = 
                     Text("Sign In")
                 }
 
-                if (!uiState.isSignedIn && emailState.value.isNotBlank()) {
-                    Text(
-                        text = "Invalid credentials, please try again.",
-                        color = MaterialTheme.colorScheme.error,
-                        modifier = Modifier.padding(top = 8.dp)
-                    )
-                }
+//                if (!uiState.isSignedIn && emailState.value.isNotBlank()) {
+//                    Text(
+//                        text = "Invalid credentials, please try again.",
+//                        color = MaterialTheme.colorScheme.error,
+//                        modifier = Modifier.padding(top = 8.dp)
+//                    )
+//                }
 
                 Spacer(modifier = Modifier.height(16.dp))
 
