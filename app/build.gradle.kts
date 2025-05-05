@@ -60,6 +60,11 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
 
+    implementation ("androidx.compose.material:material-icons-extended:1.6.0")
+
+
+    implementation("androidx.compose.foundation:foundation:1.8.0") // or your Compose version
+
     implementation ("androidx.navigation:navigation-compose:2.8.9")
     implementation ("androidx.hilt:hilt-navigation-compose:1.2.0")
 
