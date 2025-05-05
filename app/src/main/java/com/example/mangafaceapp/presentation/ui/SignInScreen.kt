@@ -74,7 +74,7 @@ fun SignInScreen(navController: NavHostController, viewModel: SignInViewModel = 
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Text(
-                    text = "Zenitera",
+                    text = "Zenithra",
                     style = MaterialTheme.typography.headlineLarge,
                     fontWeight = FontWeight.Bold,
                     color = MaterialTheme.colorScheme.primary

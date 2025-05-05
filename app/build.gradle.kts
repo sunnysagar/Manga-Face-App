@@ -93,6 +93,9 @@ dependencies {
     implementation(libs.camera.lifecycle)
     implementation(libs.camera.view)
 
+    // MediaPipe Face Detection
+    implementation ("com.google.mediapipe:tasks-vision:latest.release")
+
     // Coroutines for async programming
     implementation(libs.coroutines)
     implementation("io.coil-kt:coil-compose:2.5.0")

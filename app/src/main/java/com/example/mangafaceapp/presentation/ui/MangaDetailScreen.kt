@@ -40,9 +40,13 @@ fun MangaDetailScreen(
                     modifier = Modifier.size(150.dp).fillMaxWidth()
                 )
                 Spacer(modifier = Modifier.width(6.dp))
-                it.title?.let { it1 -> Text(it1, style = MaterialTheme.typography.titleLarge) }
-                it.subTitle?.let{ it1 -> Text(it1, style = MaterialTheme.typography.titleMedium) }
-            }
+                Column(modifier = Modifier.padding(4.dp)) {
+                    it.title?.let { it1 -> Text(it1, style = MaterialTheme.typography.titleLarge) }
+                    Spacer(modifier = Modifier.height(4.dp))
+                    it.subTitle?.let{ it1 -> Text(it1, style = MaterialTheme.typography.titleMedium) }
+                }
+                }
+
 
             Spacer(modifier = Modifier.height(4.dp))
             it.summary?.let { it1 -> Text(it1) }
