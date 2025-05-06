@@ -82,10 +82,10 @@ cd Manga-Face-App
 Get an API key from [RapidAPI - MangaVerse](https://rapidapi.com/sagararofie/api/mangaverse-api)
 
 ### Screenshots
-<img src="https://github.com/user-attachments/assets/1a5324d7-4a28-4329-bdcb-b6b5b4cc142d" width="400"/>
-<img src="https://github.com/user-attachments/assets/f9c00983-69ec-4054-aebd-efcf862e36f7" width="400"/>
-<img src="https://github.com/user-attachments/assets/7ce7493c-20ba-4746-878a-8406985df583" width="400"/>
-<img src="https://github.com/user-attachments/assets/6e3d068a-ef33-4393-8861-4f68c851e030" width="400"/>
+<img src="https://github.com/user-attachments/assets/1a5324d7-4a28-4329-bdcb-b6b5b4cc142d" width="250"/>
+<img src="https://github.com/user-attachments/assets/f9c00983-69ec-4054-aebd-efcf862e36f7" width="250"/>
+<img src="https://github.com/user-attachments/assets/7ce7493c-20ba-4746-878a-8406985df583" width="250"/>
+<img src="https://github.com/user-attachments/assets/6e3d068a-ef33-4393-8861-4f68c851e030" width="250"/>
 
 
 ### Screen-Recording and APK
