@@ -13,7 +13,7 @@ data class Manga(
 
     val title: String? = "",  // Default value for title is an empty string.
 
-    val subTitle: String? = "",  // Default value for subtitle is an empty string.
+    val sub_title: String? = "",  // Default value for subtitle is an empty string.
 
     val status: String? = "",  // Default value for status is an empty string.
 

@@ -1,4 +1,4 @@
-package com.example.mangafaceapp.presentation.mainUi
+package com.example.mangafaceapp.presentation
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Icon

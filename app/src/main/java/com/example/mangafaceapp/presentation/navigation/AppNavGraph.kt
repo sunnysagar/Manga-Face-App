@@ -4,7 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.example.mangafaceapp.presentation.mainUi.HomeScreen
+import com.example.mangafaceapp.presentation.HomeScreen
 import com.example.mangafaceapp.presentation.signin.SignInScreen
 
 @Composable

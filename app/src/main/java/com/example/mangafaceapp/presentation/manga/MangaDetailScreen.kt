@@ -47,8 +47,8 @@ fun MangaDetailScreen(
                 ) {
                     it.title?.let { it1 -> Text(it1, style = MaterialTheme.typography.titleLarge) }
                     Spacer(modifier = Modifier.height(4.dp))
-                    it.subTitle?.let{ it1 -> Text(it1, style = MaterialTheme.typography.titleMedium) }
-                    Log.d("SubtitleCheck", "Subtitle: ${it.subTitle}")
+                    it.sub_title?.let{ it1 -> Text(it1, style = MaterialTheme.typography.titleMedium) }
+                    Log.d("SubtitleCheck", "Subtitle: ${it.sub_title}")
 
                 }
                 }

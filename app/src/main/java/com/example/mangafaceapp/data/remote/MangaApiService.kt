@@ -12,7 +12,6 @@ import java.security.Key
 interface MangaApiService {
     @GET("manga/fetch")
     suspend fun fetchMangaData(
-//        @Header("X-RapidAPI-Key") apiKey: String = "59279c62b7mshf42b378350f7acfp1cfb29jsnff4523f7f6b8",
         @Query("page") page: Int = 1
     ): Response<MangaResponse>
 }
