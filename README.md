@@ -68,8 +68,8 @@ A modern Android app built with **Jetpack Compose**, **MVVM + Clean Architecture
 ## 🔄 Clone the Repo
 
 ```bash
-git clone https://github.com/your-username/MangaFace.git
-cd MangaFace
+git clone https://github.com/sunnysagar/Manga-Face-App.git
+cd Manga-Face-App
 ```
 
 ### Prerequisites
