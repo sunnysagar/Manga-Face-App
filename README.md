@@ -82,8 +82,13 @@ cd Manga-Face-App
 Get an API key from [RapidAPI - MangaVerse](https://rapidapi.com/sagararofie/api/mangaverse-api)
 
 ### Screenshots
+![screen1](https://github.com/user-attachments/assets/1a5324d7-4a28-4329-bdcb-b6b5b4cc142d)
+![screen2](https://github.com/user-attachments/assets/f9c00983-69ec-4054-aebd-efcf862e36f7)
+![screen3](https://github.com/user-attachments/assets/7ce7493c-20ba-4746-878a-8406985df583)
+ ![screen4](https://github.com/user-attachments/assets/6e3d068a-ef33-4393-8861-4f68c851e030)
 
-### APK
+### Screen-Recording and APK
+[Drive-link](https://drive.google.com/drive/folders/1MZsmmtHmVk-F3rjmt5Wg6-B705tNG0z0?usp=sharing)
 
 ### 👨‍💻 Developed By
 ### SUNNY SAGAR
